@@ -1,0 +1,271 @@
+// lib/i18n.ts
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import * as Localization from "expo-localization";
+
+const startLng = Localization.locale?.startsWith("he") ? "he" : "en";
+
+i18n.use(initReactI18next).init({
+  compatibilityJSON: "v3",
+  lng: startLng,
+  fallbackLng: "en",
+  interpolation: { escapeValue: false },
+  react: { useSuspense: false },
+  resources: {
+    en: {
+      translation: {
+        appTitle: "Personal Fitness App",
+        welcome: "Welcome 👋",
+        start: "Start",
+        profile: "Profile",
+        plan: "Personal Plan",
+        language: "Language",
+        hebrew: "Hebrew",
+        english: "English",
+
+        weight: "Weight (kg)",
+        height: "Height (cm)",
+        weightPlaceholder: "e.g., 70",
+        heightPlaceholder: "e.g., 175",
+        gender: "Gender",
+        male: "Male",
+        female: "Female",
+        goal: "Goal",
+        maintain: "Maintain",
+        cut: "Cut (Fat loss)",
+        bulk: "Bulk (Muscle gain)",
+        strength: "Strength",
+        calculate: "Calculate",
+
+        heroSubtitle: "Build a plan tailored to you",
+        lastProfile: "Last saved profile",
+        editProfile: "Edit profile",
+        viewPlan: "View Plan",
+
+        // NEW — profile extras
+        age: "Age",
+        agePlaceholder: "e.g., 30",
+        activity: "Activity level",
+        sedentary: "Sedentary",
+        light: "Light",
+        moderate: "Moderate",
+        high: "High",
+        veryHigh: "Very high",
+
+        daysPerWeek: "Days per week",
+        sessionLength: "Session length",
+        minutes: "min",
+        equipment: "Equipment",
+        home: "Home",
+        gym: "Gym",
+        experience: "Experience",
+        beginner: "Beginner",
+        intermediate: "Intermediate",
+        advanced: "Advanced",
+
+        injuries: "Injuries",
+        knees: "Knees",
+        back: "Back",
+        shoulders: "Shoulders",
+        none: "None",
+        preferences: "Preferences (optional)",
+        preferencesPlaceholder: "e.g., prefer pull-ups over lat pulldown",
+
+        target: "Target",
+        targetWeight: "Target weight (kg)",
+        targetDate: "Target date (YYYY-MM-DD)",
+        weeklyRate: "Weekly rate",
+        perWeekGain: "kg/week gain",
+        perWeekLoss: "kg/week loss",
+
+        bmi: "BMI",
+        bmiStatus: "Status",
+        underweight: "Underweight",
+        normal: "Normal",
+        overweight: "Overweight",
+        obese: "Obese",
+
+        nutritionAdvice: "Nutrition",
+        calories: "Calories",
+        protein: "Protein",
+        carbs: "Carbs",
+        fat: "Fat",
+
+        saveAs: "Save as",
+        profileName: "Profile name",
+        save: "Save",
+        load: "Load",
+        remove: "Delete",
+        savedProfiles: "Saved profiles",
+
+        // static plan labels (existing)
+        yourResults: "Your results",
+        sampleWeek: "Sample week",
+        notes: "Notes",
+        back: "Back",
+        missingData: "Missing data",
+        loadExample: "Load example (70kg, 175cm, cut)",
+
+        weekday: { 0: "Sun", 1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri", 6: "Sat" },
+
+        planKeys: {
+          upper: "Upper body",
+          upperWork: "Bench press, pull-ups/lat pulldown, shoulders, arms",
+          hiit: "Cardio / HIIT",
+          hiitWork: "20–30 min intervals",
+          legs: "Legs",
+          legsWork: "Squat, Romanian deadlift, lunges",
+          activeRest: "Active rest",
+          activeRestWork: "Walk 30–45 min",
+          backShoulders: "Back/Shoulders",
+          backShouldersWork: "Rows, face pulls, delts",
+          cardioCore: "Light cardio / Core",
+          cardioCoreWork: "Bike 25 min, abs",
+          rest: "Rest",
+          restWork: "Mobility & stretching",
+        },
+
+        nutrition: {
+          maintain: "Maintenance calories; protein 1.6–2.0 g/kg.",
+          cut: "10–20% deficit; protein 1.8–2.2 g/kg.",
+          bulk: "5–10% surplus; protein 1.6–2.0 g/kg.",
+          strength: "Maintenance/small surplus; protein 1.6–2.2 g/kg; heavy lifts.",
+        },
+
+        notesKeys: {
+          underSuggestBulk: "Low BMI – consider a gradual bulk first.",
+          overBulkWarning: "High BMI – gentle cut before bulking.",
+          obeseMedical: "Consult a professional before high intensity.",
+        },
+      },
+    },
+    he: {
+      translation: {
+        appTitle: "אפליקציית אימון אישי",
+        welcome: "ברוך הבא 👋",
+        start: "התחל",
+        profile: "פרופיל",
+        plan: "תוכנית מותאמת",
+        language: "שפה",
+        hebrew: "עברית",
+        english: "אנגלית",
+
+        weight: "משקל (ק״ג)",
+        height: "גובה (ס״מ)",
+        weightPlaceholder: "למשל: 70",
+        heightPlaceholder: "למשל: 175",
+        gender: "מין",
+        male: "גבר",
+        female: "אישה",
+        goal: "מטרה",
+        maintain: "שמירה/תחזוקה",
+        cut: "חיטוב/ירידה",
+        bulk: "עלייה במסה",
+        strength: "כוח",
+        calculate: "חשב",
+
+        heroSubtitle: "בנה/י תוכנית מותאמת אישית",
+        lastProfile: "פרופיל שמור אחרון",
+        editProfile: "עריכת פרופיל",
+        viewPlan: "צפה בתוכנית",
+
+        // NEW — profile extras
+        age: "גיל",
+        agePlaceholder: "למשל: 30",
+        activity: "רמת פעילות",
+        sedentary: "יושבני",
+        light: "קל",
+        moderate: "בינונית",
+        high: "גבוהה",
+        veryHigh: "גבוהה מאוד",
+
+        daysPerWeek: "ימים בשבוע",
+        sessionLength: "משך אימון",
+        minutes: "דק׳",
+        equipment: "ציוד",
+        home: "בית",
+        gym: "חדר כושר",
+        experience: "ניסיון",
+        beginner: "מתחיל",
+        intermediate: "בינוני",
+        advanced: "מתקדם",
+
+        injuries: "פציעות",
+        knees: "ברכיים",
+        back: "גב",
+        shoulders: "כתפיים",
+        none: "אין",
+        preferences: "העדפות (לא חובה)",
+        preferencesPlaceholder: "למשל: מעדיף מתח על פולי רחב",
+
+        target: "יעד",
+        targetWeight: "משקל יעד (ק״ג)",
+        targetDate: "תאריך יעד (YYYY-MM-DD)",
+        weeklyRate: "קצב שבועי",
+        perWeekGain: "ק״ג/שבוע עלייה",
+        perWeekLoss: "ק״ג/שבוע ירידה",
+
+        bmi: "BMI",
+        bmiStatus: "סטטוס",
+        underweight: "תת־משקל",
+        normal: "תקין",
+        overweight: "עודף",
+        obese: "השמנה",
+
+        nutritionAdvice: "תזונה",
+        calories: "קלוריות",
+        protein: "חלבון",
+        carbs: "פחמימות",
+        fat: "שומן",
+
+        saveAs: "שמירה בשם",
+        profileName: "שם פרופיל",
+        save: "שמור",
+        load: "טען",
+        remove: "מחק",
+        savedProfiles: "פרופילים שמורים",
+
+        yourResults: "התוצאות שלך",
+        sampleWeek: "שבוע לדוגמה",
+        notes: "הערות",
+        back: "חזרה",
+        missingData: "חסרים נתונים",
+        loadExample: "טען דוגמה (70ק״ג, 175ס״מ, cut)",
+
+        weekday: { 0: "א׳", 1: "ב׳", 2: "ג׳", 3: "ד׳", 4: "ה׳", 5: "ו׳", 6: "ש׳" },
+
+        planKeys: {
+          upper: "פלג גוף עליון",
+          upperWork: "לחיצת חזה, מתח/פולי, כתפיים, ידיים",
+          hiit: "אירובי / HIIT",
+          hiitWork: "20–30 דק׳ אינטרוולים",
+          legs: "רגליים",
+          legsWork: "סקוואט, דדליפט רומני, לאנג׳ים",
+          activeRest: "מנוחה פעילה",
+          activeRestWork: "הליכה 30–45 דק׳",
+          backShoulders: "גב/כתפיים",
+          backShouldersWork: "חתירה, פייספול, דלתא",
+          cardioCore: "אירובי קל / ליבה",
+          cardioCoreWork: "אופניים 25 דק׳, בטן",
+          rest: "מנוחה",
+          restWork: "שחרור ומתיחות",
+        },
+
+        nutrition: {
+          maintain: "קלוריות תחזוקה; חלבון 1.6–2.0 גר׳/ק״ג.",
+          cut: "גירעון 10–20%; חלבון 1.8–2.2 גר׳/ק״ג.",
+          bulk: "עודף 5–10%; חלבון 1.6–2.0 גר׳/ק״ג.",
+          strength: "תחזוקה/עודף קטן; חלבון 1.6–2.2 גר׳/ק״ג; אימוני כוח כבדים.",
+        },
+
+        notesKeys: {
+          underSuggestBulk: "BMI נמוך – שקול/י תחילה עלייה הדרגתית במסה.",
+          overBulkWarning: "BMI גבוה – עדיף חיטוב מתון לפני מסה.",
+          obeseMedical: "מומלץ ייעוץ מקצועי לפני פעילות עצימה.",
+        },
+      },
+    },
+  },
+});
+
+export default i18n;
